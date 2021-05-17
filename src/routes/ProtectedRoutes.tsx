@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
+import { RootState } from '../store';
 
 type ProtectRouteProps = {
     exact: boolean;
@@ -9,11 +11,11 @@ type ProtectRouteProps = {
 
 const ProtectedRoute : React.FC<ProtectRouteProps> = ({ component: Component, path, ...rest }) => {
     
-    const Auth = false;
+    const isAuth = useSelector( (state: RootState) => state.isAuth.status );
 
     return (
         <Route { ...rest } render = { (props) => (
-            Auth ? <Component {...props}/> : <Redirect to="/login"/>
+            isAuth ? <Component {...props}/> : <Redirect to="/login"/>
         )}/>        
     );
 }

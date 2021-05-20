@@ -15,7 +15,7 @@ const ProtectedRoute : React.FC<ProtectRouteProps> = ({ component: Component, pa
 
     return (
         <Route { ...rest } render = { (props) => (
-            isAuth ? <Component {...props}/> : <Redirect to="/login"/>
+            isAuth ? <Component {...props}/> : <Redirect to="/signin"/>
         )}/>        
     );
 }

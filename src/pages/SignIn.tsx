@@ -12,7 +12,7 @@ const SignIn : React.FC = () => {
 
     return (
         <div>
-            <h1>Sign In</h1>
+            <h1 className = "text-3xl">Sign In</h1>
             <button onClick = { signInHandler } >Sign In</button>
         </div>
     );

@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PublicRoute from './PublicRoutes';
 import ProtectedRoute from './ProtectedRoutes';
 import Home from '../pages/Home';
-import SignIn from '../pages/SignIn';
 import DashBoard from '../pages//DashBoard';
 import NoMatch from '../pages/NoMatch';
+import AuthPage from '../pages/AuthPage';
 
 
 const Routes : React.FC = () => {
@@ -14,7 +14,7 @@ const Routes : React.FC = () => {
            <Router>
                <Switch>
                     <PublicRoute exact path = "/" component = { Home }/>
-                    <PublicRoute exact path = "/signin" component = { SignIn } />
+                    <PublicRoute exact path = "/auth" component = { AuthPage } />
                     <ProtectedRoute exact path = "/dashboard" component = { DashBoard }/>
                     <Route path = "*" component = { NoMatch }/>
                 </Switch>

@@ -5,3 +5,11 @@ export const signIn = () => ({
 export const signOut = () => ({
     type: "SIGN_OUT"
 });
+
+export const signInPage = () => ({
+    type: "SIGNIN_PAGE"
+});
+
+export const signUpPage = () => ({
+    type: "SIGNUP_PAGE"
+});

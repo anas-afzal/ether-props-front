@@ -27,7 +27,11 @@ module.exports = {
       '6': '6px',
       '8': '8px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'auth-image': "url('./assets/auth-bg.jpg')",
+       })
+    },
   },
   variants: {
     extend: {},

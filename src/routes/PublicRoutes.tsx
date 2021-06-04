@@ -11,11 +11,11 @@ type PublicRouteProps = {
 
 const PublicRoute: React.FC<PublicRouteProps> = ({ component: Component, path, ...rest }) => {
     
-    const isAuth = useSelector( (state: RootState) => state.isAuth.status );
-
+    const isAuth = useSelector( (state: RootState) => state.isAuth.data );
+    console.log(isAuth);
     return (
         <Route { ...rest } render = {( props ) => (
-            isAuth ? <Redirect to = "/dashboard" /> : <Component {...props}/>
+            Object.keys(isAuth).length > 0 ? <Redirect to = "/dashboard" /> : <Component {...props}/>
         )}/> 
     );
 };

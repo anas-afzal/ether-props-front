@@ -14,7 +14,7 @@ const Routes : React.FC = () => {
            <Router>
                <Switch>
                     <PublicRoute exact path = "/" component = { Home }/>
-                    <PublicRoute exact path = "/auth" component = { AuthPage } />
+                    <PublicRoute exact path = "/auth" component = { AuthPage }/>
                     <ProtectedRoute exact path = "/dashboard" component = { DashBoard }/>
                     <Route path = "*" component = { NoMatch }/>
                 </Switch>

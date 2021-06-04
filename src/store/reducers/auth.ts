@@ -1,9 +1,10 @@
 interface action {
     type: string
+    payload: {}
 };
 
 const intialState = {
-    status: false
+    data: {}
 };
 
 const isAuth = ( state = intialState, action: action ) => {
@@ -11,7 +12,7 @@ const isAuth = ( state = intialState, action: action ) => {
         case "SIGN_IN":
             return {
                 ...state,
-                status: true
+                data: action.payload
             };
         case "SIGN_OUT":
             return {

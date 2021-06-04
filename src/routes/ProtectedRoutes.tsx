@@ -11,11 +11,11 @@ type ProtectRouteProps = {
 
 const ProtectedRoute : React.FC<ProtectRouteProps> = ({ component: Component, path, ...rest }) => {
     
-    const isAuth = useSelector( (state: RootState) => state.isAuth.status );
+    const isAuth = useSelector( (state: RootState) => state.isAuth.data );
 
     return (
         <Route { ...rest } render = { (props) => (
-            isAuth ? <Component {...props}/> : <Redirect to="/signin"/>
+            Object.keys(isAuth).length > 0 ? <Component {...props}/> : <Redirect to="/auth"/>
         )}/>        
     );
 }
